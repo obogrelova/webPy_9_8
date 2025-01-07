@@ -29,7 +29,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
-        if user and bcrypt.check_password_hash(user.password, form.password.data):
+        if user and check_password_hash(user.password, form.password.data):
             session['user_id'] = user.id
             flash('Успешный вход!', 'success')
             return redirect(url_for('home'))
