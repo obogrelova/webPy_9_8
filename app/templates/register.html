@@ -5,30 +5,29 @@
     <title>Register</title>
 </head>
 <body>
-    <h1>Register</h1>
+    <h1>Регистрация</h1>
     <form method="POST" action="{{ url_for('register') }}">
         {{ form.hidden_tag() }}
-        <p>
+        <div>
             {{ form.username.label }}<br>
             {{ form.username(size=32) }}
-        </p>
-        <p>
+        </div>
+        <div>
             {{ form.email.label }}<br>
             {{ form.email(size=32) }}
-        </p>
-        <p>
+        </div>
+        <div>
             {{ form.password.label }}<br>
             {{ form.password(size=32) }}
-        </p>
-        <p>
+        </div>
+        <div>
             {{ form.confirm_password.label }}<br>
             {{ form.confirm_password(size=32) }}
-        </p>
-        <p>
+        </div>
+        <div>
             {{ form.submit() }}
-        </p>
+        </div>
     </form>
-    <a href="{{ url_for('login') }}">Already have an account? Login</a>
 
 </body>
 </html>
