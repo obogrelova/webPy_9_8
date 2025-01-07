@@ -5,6 +5,25 @@
     <title>Edit_profile</title>
 </head>
 <body>
+    <h1>Редактирование профиля</h1>
+    <form method="POST" action="{{ url_for('edit_profile') }}">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}
+        </div>
+        <div>
+            {{ form.email.label }}<br>
+            {{ form.email(size=32) }}
+        </div>
+        <div>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
 
 </body>
 </html>
